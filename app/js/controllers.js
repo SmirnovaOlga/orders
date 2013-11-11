@@ -13,7 +13,7 @@ angular.module('ordersApp.controllers', []).
 
         }
 
-        $(function() {
+        function spinner(){
             var spinner = $( "#spinner" ).spinner();
             $( "#disable" ).click(function() {
                 if ( spinner.spinner( "option", "disabled" ) ) {
@@ -35,8 +35,7 @@ angular.module('ordersApp.controllers', []).
             $( "#setvalue" ).click(function() {
                 spinner.spinner( "value", 5 );
             });
-            $( "button" ).button();
-        });
+        }
 
     }]);
 
