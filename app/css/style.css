@@ -1,0 +1,97 @@
+#menu {
+    margin-bottom: 30px;
+}
+#main {
+    position: relative;
+    border:2px solid rgb(151, 151, 151);
+    width: 90%;
+    height: 550px;
+}
+
+.text {
+    position: absolute;
+    left: 30px;
+    top: -14px;
+    background: #fff;
+    font: 20px sans-serif;
+}
+
+.list-items {
+    margin: 30px 30px 30px 0px;
+    font: 18px sans-serif;
+
+}
+
+.item {
+    border:2px solid rgb(151, 151, 151);
+    height: 340px;
+    width: 180px;
+    padding: 10px 0 0 20px;
+    font: 18px sans-serif;
+    margin-left: 30px;
+    float: left;
+
+}
+
+.price {
+   margin: 20px 0 0 30px;
+}
+
+.article {
+margin-top: 20px;
+}
+
+.switch-wrapper {
+    display: inline-block;
+    position: relative;
+    top: 3px;
+}
+
+.toggle-bg {
+    background: #222; /* Вам понадобится видеть область с тумблером, но не стесняйтесь изменить цвет */
+    display: block; /* ...Чтобы можно было установить высоту и ширину */
+    float: left; /* ...Чтобы он не занимал всю ширину страницы */
+    height: 7px; /* Если хотите, можно это попозже изменить */
+    position: relative; /* Требуется, чтобы тумблер мог передвигаться */
+    width: 26px; /* Это тоже можно позже изменить */
+    border-radius: 8px;
+    background: linear-gradient(to bottom, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%);
+    box-shadow: 0 1px 0 #fff, inset 0 0 2px #d7dee3, inset 0 1px 0 #d7dee3, inset 0 1px 5px #d7dee3;
+
+}
+
+.toggle-bg input {
+    height: 28px;
+    width: 70px;
+    left: 0;
+    margin: 0; /* Сбросьте поля и отступ */
+    opacity: 0; /* Невидим! */
+    padding: 0;
+    position: absolute;
+    top: -10px; /* Сдвиньте по вертикали */
+    width: 36px;
+    z-index: 2; /* Нам нужно, чтобы вход input находился сверху span.switch, которому мы назначим z-index в 1 */
+}
+
+.switch {
+    background: #ccc;
+    display: block;
+    float: left;
+    height: 14px;
+    left: -1px; /* Это – начальная точка. При добавлении border radius немного виден фон, если использовать left: 0;, поэтому лучше всего применить -1px.*/
+    position: relative;
+    top: 0px; /* ...Чтобы отцентрировать его по вертикали */
+    width: 30px;
+    height: 30px;
+    z-index: 1; /* Помните, он должен быть под невидимыми input-ами */
+    background: radial-gradient(ellipse at center, #ffffff 0%,#fefefe 50%,#fdfdfd 51%,#ffffff 100%);
+    box-shadow: 0 1px 1px #65727b, 0 0 1px #b6bdc2;
+}
+.toggle-bg input:checked~.switch{ left: -1px; }
+.toggle-bg input~:checked~.switch{ left: 13px; }
+.toggle-bg input:checked{ z-index: 0; }
+.toggle-bg input~:checked~.switch{ left: 41px; }
+
+.button {
+    margin-left: 66px;
+}
