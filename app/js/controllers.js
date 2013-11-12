@@ -12,6 +12,11 @@ angular.module('ordersApp.controllers', []).
             $scope.path = $routeParams.path;
 
         }
+
+        $scope.add = function(){
+            $scope.array = [];
+
+        }
     }]);
 
 

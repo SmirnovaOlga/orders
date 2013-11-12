@@ -5,75 +5,92 @@
     <p class="text-info text">Goods</p>
 
     <div class="list-items">
-        <div class="item">
+        <div class="item" id="1">
             <p>Title</p>
 
             <img src="img/Hydrangeas.jpg" height="100px" width="160px" class="image">
 
-            <span class="label label-info price">Price:
+            <span class="label label-success price">Price:
             <strong style="font: 24px Helvetica;"> 20.00 </strong><span>rub</span></span>
 
-            <span class="article" style="position: relative; top: 12px; left: -26px;">Spice</span>
+            <form>
+            <p class=" switch-off-1">Off</p>
+            <p class=" switch-on-1" >On</p>
+            <span class="article" style="position: relative; top: 9px; left: -26px;">
+                <span class="badge badge-warning">Spice</span>
+            </span>
             <span class="toggle-bg switcher">
                 <input type="radio" name="toggle" value="off">
                 <input type="radio" name="toggle" value="on">
                 <span class="switch"></span>
             </span>
 
-            <p class="article" style="margin-top: 40px;">Count
+            <p class="article" style="margin-top: 40px;">
+                <span class="badge badge-warning">Count</span>
                 <input type="text" ng-model="num" class="counter" value={{num}} counter>
-                <i class="icon-arrow-up arrow-up" ng-click="up()"></i><i class="icon-arrow-down arrow-down"
-                                                                         ng-click="down()"></i>
+                <i class="icon-arrow-up arrow-up" ng-click="up()"></i>
+                <i class="icon-arrow-down arrow-down" ng-click="down()"></i>
             </p>
 
-            <input type="button" value="Add to bag" class="btn button">
+            <a class="btn button" ng-click="add"><i class="icon-shopping-cart"></i> Add to bag</a>
+            </form>
         </div>
 
-        <div class="item">
+        <div class="item" id="2">
             <p>Title</p>
 
             <img src="img/Koala.jpg" height="100px" width="160px" class="image">
 
-            <span class="label label-info price">Price:
+            <span class="label label-success price">Price:
             <strong style="font: 24px Helvetica;"> 30.00 </strong><span>rub</span></span>
 
-            <span class="article" style="position: relative; top: 12px; left: -26px;">Spice</span>
+            <p class=" switch-off-2">Off</p>
+            <p class=" switch-on-2" >On</p>
+            <span class="article" style="position: relative; top: 12px; left: -26px;">
+                <span class="badge badge-warning">Spice</span></span>
+            </span>
             <span class="toggle-bg switcher">
                 <input type="radio" name="toggle" value="off">
                 <input type="radio" name="toggle" value="on">
                 <span class="switch"></span>
             </span>
 
-            <p class="article" style="margin-top: 40px;">Count
+            <p class="article" style="margin-top: 40px;">
+                <span class="badge badge-warning">Count</span>
                 <input type="text" ng-model="num" class="counter" value={{num}} counter>
-                <i class="icon-arrow-up arrow-up" ng-click="up()"></i><i class="icon-arrow-down arrow-down"
-                                                                         ng-click="down()"></i>
+                <i class="icon-arrow-up arrow-up" ng-click="up()"></i>
+                <i class="icon-arrow-down arrow-down" ng-click="down()"></i>
             </p>
-            <input type="button" value="Add to bag" class="btn button">
+            <a class="btn button"><i class="icon-shopping-cart"></i> Add to bag</a>
         </div>
 
-        <div class="item">
+        <div class="item" id="3">
             <p>Title</p>
 
             <img src="img/Lighthouse.jpg" height="100px" width="160px" class="image">
 
-            <span class="label label-info price">Price:
+            <span class="label label-success price">Price:
             <strong style="font: 24px Helvetica;"> 40.00 </strong><span>rub</span></span>
 
-            <span class="article" style="position: relative; top: 12px; left: -26px;">Spice</span>
+            <p class=" switch-off-3">Off</p>
+            <p class=" switch-on-3" >On</p>
+            <span class="article" style="position: relative; top: 12px; left: -26px;">
+                <span class="badge badge-warning">Spice</span>
+            </span>
             <span class="toggle-bg switcher">
                 <input type="radio" name="toggle" value="off">
                 <input type="radio" name="toggle" value="on">
                 <span class="switch"></span>
             </span>
 
-            <p class="article" style="margin-top: 40px;">Count
+            <p class="article" style="margin-top: 40px;">
+                <span class="badge badge-warning">Count</span>
                 <input type="text" ng-model="num" class="counter" value={{num}}>
                 <i class="icon-arrow-up arrow-up" ng-click="up()"></i>
                 <i class="icon-arrow-down arrow-down"  ng-click="down()"></i>
             </p>
 
-            <input type="button" value="Add to bag" class="btn button">
+            <a class="btn button"><i class="icon-shopping-cart"></i> Add to bag</a>
         </div>
     </div>
 </div>

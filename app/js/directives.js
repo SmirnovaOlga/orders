@@ -19,18 +19,18 @@ angular.module('ordersApp.directives', []).
         replace: false,
 
         link: function(scope, element, controller) {
-            scope.num = 0;
+            scope.num = 1;
             scope.up = function()
             {
-                var number = parseInt(scope.num);
-                scope.num = ++number;
+                scope.num = parseInt(scope.num);
+                scope.num ++;
             }
 
             scope.down = function()
             {
-                var number = parseInt(scope.num);
-                if(number > 0)
-                    scope.num = --number;
+                scope.num = parseInt(scope.num);
+                if(scope.num > 0)
+                    scope.num--;
                 else
                     scope.num = 0;
             }

@@ -1,11 +1,18 @@
-#menu {
-    margin-bottom: 30px;
-}
 #main {
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
     position: relative;
     border:2px solid rgb(151, 151, 151);
     width: 90%;
     height: 550px;
+}
+#menu {
+    margin-bottom: 30px;
 }
 
 .text {
@@ -43,7 +50,7 @@
 }
 
 .button {
-    margin-left: 66px;
+    margin-left: 58px;
 }
 
 .counter {
@@ -51,25 +58,29 @@
 }
 
 .arrow-up {
-    position: absolute;
-    top: 308px;
-    left: 203px;
+    position: relative;
+    top: -41px;
+    left: 154px;
     border:1px solid #CCCCCC;
+    opacity:  0.5;
 }
 
 .arrow-up:hover {
-    border:1px solid #8788cc;
+    border:1px solid #a6aacc;
+    opacity: 1;
 }
 
 .arrow-down {
     position: relative;
-    top: -28px;
-    left: 151px;
+    top: -27px;
+    left: 133px;
     border:1px solid #CCCCCC;
+    opacity:  0.5;
 }
 
 .arrow-down:hover {
-    border:1px solid #8788cc;
+    border:1px solid #a6aacc;
+    opacity: 1;
 }
 
 body{
@@ -178,7 +189,50 @@ body{
 .switcher {
     position: relative;
     top: 20px;
-    left: 120px;
+    left: 110px;
 }
+
+.switch-off-1 {
+     position: absolute;
+     top: 258px;
+     left: 132px;
+     font: 18px italic;
+}
+
+.switch-on-1 {
+    position: absolute;
+    top: 258px;
+    left: 190px;
+    font: 18px italic;
+}
+
+.switch-off-2 {
+    position: absolute;
+    top: 258px;
+    left: 365px;
+    font: 18px italic;
+}
+
+.switch-on-2 {
+    position: absolute;
+    top: 258px;
+    left: 424px;
+    font: 18px italic;
+}
+
+.switch-off-3 {
+    position: absolute;
+    top: 258px;
+    left: 600px;
+    font: 18px italic;
+}
+
+.switch-on-3 {
+    position: absolute;
+    top: 258px;
+    left: 658px;
+    font: 18px italic;
+}
+
 
 
