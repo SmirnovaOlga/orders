@@ -13,18 +13,18 @@
             <span class="label label-info price">Price:
             <strong style="font: 24px Helvetica;"> 20.00 </strong><span>rub</span></span>
 
-            <p class="article">Spice</p>
+            <span class="article" style="position: relative; top: 12px; left: -26px;">Spice</span>
+            <span class="toggle-bg switcher">
+                <input type="radio" name="toggle" value="off">
+                <input type="radio" name="toggle" value="on">
+                <span class="switch"></span>
+            </span>
 
-            <!--<span class="toggle-bg">-->
-            <!--<input type="radio" name="toggle" value="off">-->
-            <!--<input type="radio" name="toggle" value="on">-->
-            <!--<span class="switch"></span>-->
-            <!--</span>-->
-
-            <p class="article">Count</p>
-            <!--<form>-->
-                <!--<input type="number" min="0" max="10" step="1">-->
-            <!--</form>-->
+            <p class="article" style="margin-top: 40px;">Count
+                <input type="text" ng-model="num" class="counter" value={{num}} counter>
+                <i class="icon-arrow-up arrow-up" ng-click="up()"></i><i class="icon-arrow-down arrow-down"
+                                                                         ng-click="down()"></i>
+            </p>
 
             <input type="button" value="Add to bag" class="btn button">
         </div>
@@ -37,16 +37,17 @@
             <span class="label label-info price">Price:
             <strong style="font: 24px Helvetica;"> 30.00 </strong><span>rub</span></span>
 
-            <p class="article">Spice</p>
+            <span class="article" style="position: relative; top: 12px; left: -26px;">Spice</span>
+            <span class="toggle-bg switcher">
+                <input type="radio" name="toggle" value="off">
+                <input type="radio" name="toggle" value="on">
+                <span class="switch"></span>
+            </span>
 
-            <!--<span class="toggle-bg">-->
-            <!--<input type="radio" name="toggle" value="off">-->
-            <!--<input type="radio" name="toggle" value="on">-->
-            <!--<span class="switch"></span>-->
-            <!--</span>-->
-
-            <p class="article">Count
-                <input id="spinner" name="value" />
+            <p class="article" style="margin-top: 40px;">Count
+                <input type="text" ng-model="num" class="counter" value={{num}} counter>
+                <i class="icon-arrow-up arrow-up" ng-click="up()"></i><i class="icon-arrow-down arrow-down"
+                                                                         ng-click="down()"></i>
             </p>
             <input type="button" value="Add to bag" class="btn button">
         </div>
@@ -59,18 +60,18 @@
             <span class="label label-info price">Price:
             <strong style="font: 24px Helvetica;"> 40.00 </strong><span>rub</span></span>
 
-            <p class="article">Spice</p>
+            <span class="article" style="position: relative; top: 12px; left: -26px;">Spice</span>
+            <span class="toggle-bg switcher">
+                <input type="radio" name="toggle" value="off">
+                <input type="radio" name="toggle" value="on">
+                <span class="switch"></span>
+            </span>
 
-            <!--<span class="toggle-bg">-->
-            <!--<input type="radio" name="toggle" value="off">-->
-            <!--<input type="radio" name="toggle" value="on">-->
-            <!--<span class="switch"></span>-->
-            <!--</span>-->
-
-            <p class="article">Count</p>
-            <!--<form>-->
-            <!--<input type="number" min="0" max="10" step="1">-->
-            <!--</form>-->
+            <p class="article" style="margin-top: 40px;">Count
+                <input type="text" ng-model="num" class="counter" value={{num}}>
+                <i class="icon-arrow-up arrow-up" ng-click="up()"></i>
+                <i class="icon-arrow-down arrow-down"  ng-click="down()"></i>
+            </p>
 
             <input type="button" value="Add to bag" class="btn button">
         </div>
