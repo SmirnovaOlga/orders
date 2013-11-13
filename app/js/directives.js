@@ -12,19 +12,23 @@ angular.module('ordersApp.directives', []).
 angular.module('ordersApp.directives', []).
     directive('counter', function() {
     return {
-        template:  '<p class="article">Count'+
-            '<input type="text" ng-model="num" class="counter" value={{num}}>'+
-            '<i class="icon-arrow-up arrow-up" ng-click="up()"></i><i class="icon-arrow-down arrow-down"  ng-click="down()"></i></p>',
+        template:
+            '<span><input type="text" ng-model="num" class="counter">'+
+            '<i class="icon-arrow-up arrow-up" ng-click="up()"></i><i class="icon-arrow-down arrow-down"  ng-click="down()"></i></span>',
 
-        replace: false,
+        replace: true,
 
-        link: function(scope, element, controller) {
-            scope.num = 1;
+        link: function(scope, element, attrs) {
+
+			scope.num = scope.$parent.items[attrs.itemIndex].count;
+
             scope.up = function()
             {
                 scope.num = parseInt(scope.num);
                 scope.num ++;
-            }
+
+				scope.$parent.items[attrs.itemIndex].count = scope.num;
+            };
 
             scope.down = function()
             {
@@ -33,7 +37,9 @@ angular.module('ordersApp.directives', []).
                     scope.num--;
                 else
                     scope.num = 0;
-            }
+
+				scope.$parent.items[attrs.itemIndex].count =scope.num;
+            };
         }
         }
     });

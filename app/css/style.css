@@ -73,7 +73,7 @@
 .arrow-down {
     position: relative;
     top: -27px;
-    left: 133px;
+    left: 138px;
     border:1px solid #CCCCCC;
     opacity:  0.5;
 }
@@ -186,53 +186,27 @@ body{
 
 .toggle-bg input:checked{z-index: 0;}
 
-.switcher {
+.form {
     position: relative;
+}
+
+.switcher {
+    position: absolute;
     top: 20px;
     left: 110px;
 }
 
-.switch-off-1 {
+.switch-off {
      position: absolute;
-     top: 258px;
-     left: 132px;
+     top: 10px;
+     left: 80px;
      font: 18px italic;
 }
 
-.switch-on-1 {
+.switch-on {
     position: absolute;
-    top: 258px;
-    left: 190px;
+    top: 10px;
+    left: 140px;
     font: 18px italic;
 }
-
-.switch-off-2 {
-    position: absolute;
-    top: 258px;
-    left: 365px;
-    font: 18px italic;
-}
-
-.switch-on-2 {
-    position: absolute;
-    top: 258px;
-    left: 424px;
-    font: 18px italic;
-}
-
-.switch-off-3 {
-    position: absolute;
-    top: 258px;
-    left: 600px;
-    font: 18px italic;
-}
-
-.switch-on-3 {
-    position: absolute;
-    top: 258px;
-    left: 658px;
-    font: 18px italic;
-}
-
-
 
