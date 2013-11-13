@@ -5,21 +5,22 @@
 angular.module('ordersApp.controllers', []).
     controller('IndexCtrl', ['$scope', '$routeParams', function ($scope, $routeParams) {
 
-//        $http.get('server').success(function(data)
-//        {
-//            $scope.items = data;
-//        });
+
+//            $scope.items = menuList;
 
 		$scope.items = [
-			{id: 1, title: 'product1', price: 20, spices: 'off', count: 1, image: "img/Hydrangeas.jpg"},
-			{id: 2, title: 'product2', price: 30, spices: 'off', count: 1, image: "img/Lighthouse.jpg"},
-			{id: 3, title: 'product3', price: 40, spices: 'off', count: 1, image: "img/Lighthouse.jpg"}
+			{id: 1, title: 'i-Twister', price: 44, spices: 'off', count: 1, image: "img/Hydrangeas.jpg", description: "This is fresh salad with tasty chiken"},
+			{id: 2, title: 'Твистер из тостера', price: 103, spices: 'off', count: 1, image: "img/Lighthouse.jpg", description: "This is fresh salad with tasty pork"},
+			{id: 3, title: 'Биггер', price: 148, spices: 'off', count: 1, image: "img/Lighthouse.jpg", description: "This is fresh salad with tasty beef"}
 		];
 
+        $scope.sum = 0;
+        $scope.amount = 0;
 		$scope.cart = [];
 
         $scope.add = function(index) {
-
+            $scope.sum = 0;
+            $scope.amount = 0;
             var len = $scope.cart.length;
 
             for (var i = 0; i < len; i++)
@@ -32,5 +33,17 @@ angular.module('ordersApp.controllers', []).
             }
             $scope.cart.push($scope.items[index]);
             console.log($scope.cart);
+
+            for (var j = 0; j < $scope.cart.length; j++)
+            {
+                $scope.sum +=  $scope.cart[j].price * $scope.cart[j].count;
+                $scope.amount += $scope.cart[j].count;
+            }
+
+            console.log($scope.sum);
+        }
+
+        $scope.check = function() {
+
         }
     }]);

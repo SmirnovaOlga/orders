@@ -1,4 +1,10 @@
-<div id="menu">
+<div id="menu" class="container">
+
+     <span class="label label-info price">Items:</span><span class="summary">{{ amount }}</span>
+     <span class="label label-info price">Total:</span><span class="summary">{{ sum }} rub</span>
+     <p class="check">
+        <a class="btn btn-primary btn-large" ng-click="check()">Check out</a>
+     </p>
 </div>
 
 <div id="main" class="container">
@@ -8,9 +14,11 @@
         <div class="item" ng-repeat="item in items">
             <p>{{ item.title }}</p>
 
-            <img ng-src="{{ item.image }}" height="100px" width="160px" class="image">
+            <p class="image"><img ng-src="{{ item.image }}" height="100px" width="160px" ng-mouseenter="show = true" ng-mouseleave="show = false">
+            <p class="description" ng-show="show">{{ item.description }}</p>
+            </p>
 
-            <span class="label label-success price">Price:
+            <span class="label label-info price">Price:
             <strong style="font: 24px Helvetica;"> {{ item.price }} </strong><span>rub</span></span>
 
 			<form class="form">
@@ -21,8 +29,8 @@
                 <span class="badge badge-warning">Spice</span>
             </span>
             <span class="toggle-bg switcher">
-                <input type="radio" name="toggle" value="off" ng-model="item.spices" disabled>
-                <input type="radio" name="toggle" value="on" ng-model="item.spices" disabled>
+                <input type="radio" name="toggle" value="off" ng-model="item.spices">
+                <input type="radio" name="toggle" value="on" ng-model="item.spices">
                 <span class="switch"></span>
             </span>
 
