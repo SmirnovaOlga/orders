@@ -1,7 +1,7 @@
 <div id="menu" class="container">
 
     <p><span class="label label-info price">Items:</span><span class="summary">{{ amount }}</span></p>
-     <span class="label label-info price">Total:</span><span class="summary">{{ sum }} rub</span>
+     <span class="label label-info price">Total:</span><span class="summary" ng-init="sum = 0">{{ sum }} rub</span>
      <span class="check">
         <a class="btn btn-primary btn-large" ng-href="#/cart">View cart</a>
      </span>

@@ -43,3 +43,43 @@ angular.module('ordersApp.directives', []).
         }
         }
     });
+
+angular.module('ordersApp.directives', []).
+    directive('counterCart', function() {
+        return {
+            template:
+                '<span><input type="text" ng-model="num" class="counter">'+
+                    '<i class="icon-arrow-up arrow-up-cart" ng-click="up()"></i><i class="icon-arrow-down arrow-down-cart"  ng-click="down()"></i></span>',
+
+            replace: true,
+
+            link: function(scope, element, attrs) {
+
+                scope.num = scope.$parent.items[attrs.itemIndex].count;
+                scope.total = scope.$parent.items[attrs.itemIndex].price;
+                scope.totalpr = 0;
+
+                scope.up = function()
+                {
+                    scope.num = parseInt(scope.num);
+                    scope.num ++;
+
+                    scope.$parent.items[attrs.itemIndex].count = scope.num;
+                    scope.total = scope.$parent.items[attrs.itemIndex].count*scope.$parent.items[attrs.itemIndex].price;
+                };
+                scope.down = function()
+                {
+                    scope.num = parseInt(scope.num);
+                    if(scope.num > 0)
+                        scope.num--;
+                    else
+                        scope.num = 0;
+
+                    scope.$parent.items[attrs.itemIndex].count =scope.num;
+                   scope.total = scope.$parent.items[attrs.itemIndex].count*scope.$parent.items[attrs.itemIndex].price;
+
+                };
+
+            }
+        }
+    });

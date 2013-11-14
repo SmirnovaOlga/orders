@@ -20,7 +20,6 @@ angular.module('ordersApp.controllers', []).
             {id: 3, title: 'Биггер', price: 148, spices: 'off', count: 1, image: "img/Lighthouse.jpg", description: "This is fresh salad with tasty beef"}
         ];
 
-        $scope.sum = 0;
         $scope.amount = 0;
 		$scope.cart = [];
 
@@ -47,6 +46,7 @@ angular.module('ordersApp.controllers', []).
             }
             console.log($scope.sum);
         }
+
 
 
         $scope.check = function() {
