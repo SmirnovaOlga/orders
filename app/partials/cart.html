@@ -1,0 +1,33 @@
+<div id="menu" class="container" style="height: 50px;">
+    <p class="text-info text-cart">Shopping cart</p>
+</div>
+
+<div class="container main-cart">
+    <div class="cart">
+
+        <div ng-repeat="el in carts" style="border-right: 2px solid rgb(151, 151, 151);">
+
+            <span class="image" style="float: left; margin-right: 20px;">
+                <img ng-src="{{ el.image }}" height="80px" width="100px">
+            </span>
+            <span style="float: left;"><p class="title">{{ el.title }} </p>
+            <p>
+                <strong style="font: 20px Helvetica;"> {{ el.price }} x </strong>
+                <span counter item-index="{{ $index }}"></span>
+            </p>
+            </span>
+        </div>
+
+    </div>
+
+
+    <div class="cart-footer">
+        <p class="label label-info price" style="font: 24px bold !important;">Total:</p><span class="summary">{{ sum }} rub</span>
+            <div style="margin-top: 10px;">
+                <a class="btn btn-primary btn-large" ng-href="#/">Continue shopping</a>
+                <a class="btn btn-primary btn-large button-check" ng-click="check()">Check out</a>
+            </div>
+        </div>
+    </div>
+
+</div>

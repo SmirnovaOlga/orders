@@ -3,7 +3,7 @@
     <p><span class="label label-info price">Items:</span><span class="summary">{{ amount }}</span></p>
      <span class="label label-info price">Total:</span><span class="summary">{{ sum }} rub</span>
      <span class="check">
-        <a class="btn btn-primary btn-large" ng-click="check()">Check out</a>
+        <a class="btn btn-primary btn-large" ng-href="#/cart">View cart</a>
      </span>
 </div>
 
@@ -15,8 +15,7 @@
             <p>{{ item.title }}</p>
 
             <p class="image"><img ng-src="{{ item.image }}" height="100px" width="160px" ng-mouseenter="show = true" ng-mouseleave="show = false">
-            <p class="description" ng-show="show">{{ item.description }}</p>
-            </p>
+            <p class="description" ng-show="show">{{ item.description }}</p></p>
 
             <span class="label label-info price">Price:
             <strong style="font: 24px Helvetica;"> {{ item.price }} </strong><span>rub</span></span>
@@ -35,11 +34,11 @@
             </span>
 
 				<p class="article" style="margin-top: 40px;">
-					<span class="badge badge-warning">Count</span>
+					<span class="badge badge-warning" style="margin-right: 30px;">Count</span>
 					<span counter item-index="{{ $index }}"></span>
 				</p>
 
-				<a class="btn button" ng-click="add($index)"><i class="icon-shopping-cart"></i> Add to bag</a>
+				<a class="btn button" ng-click="add($index)"><i class="icon-shopping-cart"></i> Add to cart</a>
 			</form>
         </div>
     </div>

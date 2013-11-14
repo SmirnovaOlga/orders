@@ -10,6 +10,6 @@ angular.module('ordersApp', [
     ]).
     config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/', {templateUrl: 'partials/index.html', controller: 'IndexCtrl'});
-        $routeProvider.when('/:path*', {templateUrl: 'partials/index.html', controller: 'IndexCtrl'});
+        $routeProvider.when('/cart', {templateUrl: 'partials/cart.html', controller: 'IndexCtrl'});
         $routeProvider.otherwise({redirectTo: '/'});
     }]);
