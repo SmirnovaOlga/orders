@@ -2,15 +2,15 @@
 
 /* Directives */
 
-angular.module('ordersApp.directives', []).
-  directive('appVersion', ['version', function(version) {
+var app = angular.module('ordersApp.directives', []);
+
+app.directive('appVersion', ['version', function(version) {
     return function(scope, elm, attrs) {
       elm.text(version);
     };
   }]);
 
-angular.module('ordersApp.directives', []).
-    directive('counter', function() {
+app.directive('counter', function() {
     return {
         template:
             '<span><input type="text" ng-model="num" class="counter">'+
@@ -44,8 +44,7 @@ angular.module('ordersApp.directives', []).
         }
     });
 
-angular.module('ordersApp.directives', []).
-    directive('counterCart', function() {
+app.directive('counterCart', function() {
         return {
             template:
                 '<span><input type="text" ng-model="num" class="counter">'+
@@ -55,29 +54,29 @@ angular.module('ordersApp.directives', []).
 
             link: function(scope, element, attrs) {
 
-                scope.num = scope.$parent.items[attrs.itemIndex].count;
-                scope.total = scope.$parent.items[attrs.itemIndex].price;
-                scope.totalpr = 0;
+                scope.num = scope.$parent.cart[attrs.itemIndex].count;
+                scope.totalprice = scope.$parent.cart[attrs.itemIndex].price* scope.num;
 
                 scope.up = function()
                 {
                     scope.num = parseInt(scope.num);
                     scope.num ++;
+                    scope.totalprice = scope.$parent.cart[attrs.itemIndex].price*scope.num;
+                    scope.$parent.total += scope.$parent.cart[attrs.itemIndex].price;
 
-                    scope.$parent.items[attrs.itemIndex].count = scope.num;
-                    scope.total = scope.$parent.items[attrs.itemIndex].count*scope.$parent.items[attrs.itemIndex].price;
                 };
                 scope.down = function()
                 {
                     scope.num = parseInt(scope.num);
                     if(scope.num > 0)
+                    {
+                        scope.$parent.total -= scope.$parent.cart[attrs.itemIndex].price;
                         scope.num--;
+                    }
                     else
                         scope.num = 0;
 
-                    scope.$parent.items[attrs.itemIndex].count =scope.num;
-                   scope.total = scope.$parent.items[attrs.itemIndex].count*scope.$parent.items[attrs.itemIndex].price;
-
+                    scope.totalprice = scope.$parent.cart[attrs.itemIndex].price*scope.num;
                 };
 
             }
