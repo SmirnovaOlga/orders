@@ -68,9 +68,9 @@ app.controller('CartCtrl', ['$scope', '$routeParams', function ($scope, $routePa
 //            $http.post("wwv_flow.show", postData
 //                ).success(function(data, status, headers, config){
 //
-//            }).error(function(data, status, headers, config) {
-//
 //            });
+
+            console.log($scope.cart);
         }
 
 

@@ -63,6 +63,7 @@ app.directive('counterCart', function() {
                     scope.num ++;
                     scope.totalprice = scope.$parent.cart[attrs.itemIndex].price*scope.num;
                     scope.$parent.total += scope.$parent.cart[attrs.itemIndex].price;
+                    scope.$parent.cart[attrs.itemIndex].count ++;
 
                 };
                 scope.down = function()
@@ -72,6 +73,7 @@ app.directive('counterCart', function() {
                     {
                         scope.$parent.total -= scope.$parent.cart[attrs.itemIndex].price;
                         scope.num--;
+                        scope.$parent.cart[attrs.itemIndex].count --;
                     }
                     else
                         scope.num = 0;
