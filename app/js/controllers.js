@@ -6,13 +6,13 @@ var app = angular.module('ordersApp.controllers', []);
 app.controller('IndexCtrl', ['$scope', '$routeParams', '$location', '$http', function ($scope, $routeParams, $location, $http) {
 
 
-    $scope.items = menuList;
+//   $scope.items = menuList;
 
-//        $scope.items = [
-//            {id: 1, title: 'i-Twister', price: 44, spices: 'off', count: 1, image: "img/Hydrangeas.jpg", description: "This is fresh salad with tasty chiken"},
-//            {id: 2, title: 'Твистер из тостера', price: 103, spices: 'off', count: 1, image: "img/Lighthouse.jpg", description: "This is fresh salad with tasty pork"},
-//            {id: 3, title: 'Биггер', price: 148, spices: 'off', count: 1, image: "img/Lighthouse.jpg", description: "This is fresh salad with tasty beef"}
-//        ];
+    $scope.items = [
+        {id: 1, title: 'i-Twister', price: 44, spices: 'off', count: 1, image: "img/Hydrangeas.jpg", description: "This is fresh salad with tasty chiken"},
+        {id: 2, title: 'Твистер из тостера', price: 103, spices: 'off', count: 1, image: "img/Lighthouse.jpg", description: "This is fresh salad with tasty pork"},
+        {id: 3, title: 'Биггер', price: 148, spices: 'off', count: 1, image: "img/Lighthouse.jpg", description: "This is fresh salad with tasty beef"}
+    ];
 
     $scope.amount = 0;
     $scope.selectedItems = [];
@@ -23,6 +23,7 @@ app.controller('IndexCtrl', ['$scope', '$routeParams', '$location', '$http', fun
         for (var i = 0; i < $scope.selectedItems.length; i++) {
             $scope.itemscart.push("" + $scope.selectedItems[i].id + ";" + $scope.selectedItems[i].count + ";" + $scope.selectedItems[i].spices + "");
         }
+        $location.path('/cart');
 
         var postData = {p_flow_id: $('#pFlowId').val(),
             p_flow_step_id: $('#pFlowStepId').val(),
@@ -31,15 +32,15 @@ app.controller('IndexCtrl', ['$scope', '$routeParams', '$location', '$http', fun
             x02: $scope.itemscart,
             p_request: "APPLICATION_PROCESS=Check Out Order"
         };
-        $http.post("wwv_flow.show", postData
-            ).success(function (data, status, headers, config) {
-                $scope.data = data || "Request failed";
-                if ($scope.data.ERR == "0") {
-                    $location.path('/cart');
-                }
-                else
-                    alert($scope.data.error);
-            });
+//        $http.post("wwv_flow.show", postData
+//            ).success(function (data, status, headers, config) {
+//                $scope.data = data || "Request failed";
+//                if ($scope.data.ERR == "0") {
+//                    $location.path('/cart');
+//                }
+//                else
+//                    alert($scope.data.error);
+//            });
         console.log($scope.itemscart);
 
     }
@@ -70,12 +71,12 @@ app.controller('IndexCtrl', ['$scope', '$routeParams', '$location', '$http', fun
 app.controller('CartCtrl', ['$scope', '$routeParams', '$http', function ($scope, $routeParams, $http) {
 
 
-    $scope.cart = menuList;
+//    $scope.cart = menuList;
 
-//        $scope.cart = [
-//            {id: 1, title: 'i-Twister', price: 44, count: 2, image: "img/Hydrangeas.jpg"},
-//            {id: 3, title: 'Биггер', price: 148, count: 3, image: "img/Lighthouse.jpg"}
-//        ];
+    $scope.cart = [
+        {id: 1, title: 'i-Twister', price: 44, count: 2, image: "img/Hydrangeas.jpg"},
+        {id: 3, title: 'Биггер', price: 148, count: 3, image: "img/Lighthouse.jpg"}
+    ];
     $scope.total = 0;
 
     for (var i = 0; i < $scope.cart.length; i++) {

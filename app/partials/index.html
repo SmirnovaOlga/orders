@@ -1,7 +1,7 @@
 <div id="menu" class="container">
 
     <p><span class="label label-info price">Items:</span><span class="summary">{{ amount }}</span></p>
-     <span class="label label-info price">Total:</span><span class="summary" ng-init="sum = 0">{{ sum }} rub</span>
+    <span class="label label-info price">Total:</span><span class="summary" ng-init="sum = 0">{{ sum }} rub</span>
      <span class="check">
         <a class="btn btn-primary btn-large" ng-click="cart()">View cart</a>
      </span>
@@ -14,17 +14,19 @@
         <div class="item" ng-repeat="item in items">
             <p class="title">{{ item.title }}</p>
 
-            <p class="image"><img ng-src="{{ item.image }}" height="100px" width="160px" ng-mouseenter="show = true" ng-mouseleave="show = false">
+            <p class="image"><img ng-src="{{ item.image }}" height="100px" width="160px" ng-mouseenter="show = true"
+                                  ng-mouseleave="show = false">
+
             <p class="description" ng-show="show">{{ item.description }}</p></p>
 
             <span class="label label-info price">Price:
-            <strong style="font: 24px Helvetica;"> {{ item.price }} </strong><span>rub</span></span>
+            <strong class="sum"> {{ item.price }} </strong><span>rub</span></span>
 
-			<form class="form">
-				<p class=" switch-off">Off</p>
+            <form class="form">
+                <p class=" switch-off">Off</p>
 
-				<p class=" switch-on">On</p>
-            <span class="article" style="position: relative; top: 10px;">
+                <p class=" switch-on">On</p>
+            <span class="article spice">
                 <span class="badge badge-warning">Spice</span>
             </span>
             <span class="toggle-bg switcher">
@@ -33,13 +35,13 @@
                 <span class="switch"></span>
             </span>
 
-				<p class="article" style="margin-top: 40px;">
-					<span class="badge badge-warning" style="margin-right: 30px;">Count</span>
-					<span counter item-index="{{ $index }}"></span>
-				</p>
+                <p class="article count">
+                    <span class="badge badge-warning shift">Count</span>
+                    <span counter item-index="{{ $index }}"></span>
+                </p>
 
-				<a class="btn button" ng-click="add($index)"><i class="icon-shopping-cart"></i>Add to cart</a>
-			</form>
+                <a class="btn button" ng-click="add($index)"><i class="icon-shopping-cart"></i>Add to cart</a>
+            </form>
         </div>
     </div>
 </div>

@@ -5,28 +5,29 @@
 <div class="container main-cart">
     <div class="cart">
 
-        <div ng-repeat="el in cart" >
+        <div ng-repeat="el in cart">
 
-            <div >
-            <span class="image" style="float: left; width: 300px; margin-right: 20px; border-right: 2px solid rgb(151, 151, 151);">
+            <div>
+            <span class="image"
+                  style="float: left; width: 300px; margin-right: 20px; border-right: 2px solid rgb(151, 151, 151);">
                 <span class="title">{{ el.title }}</span>
                 <p><img ng-src="{{ el.image }}" height="80px" width="100px">
-                <strong style="font: 20px Helvetica;"> {{ el.price }} x </strong>
-                <span counter-cart item-index="{{ $index }}"></span>
+                    <strong style="font: 20px Helvetica;"> {{ el.price }} x </strong>
+                    <span counter-cart item-index="{{ $index }}"></span>
                 </p>
                </span>
                 <span style="float: left; padding-top: 30px;">
                 <span><strong style="font: 20px Helvetica;">{{ totalprice }} rub</strong></span>
                 </span>
-            <div style="clear:both;"></div>
 
+                <div style="clear:both;"></div>
+            </div>
         </div>
 
-    </div>
 
+        <div class="cart-footer">
+            <p class="label label-info price" style="font: 24px bold !important;">Total:</p><span class="summary">{{ total }} rub</span>
 
-    <div class="cart-footer">
-        <p class="label label-info price" style="font: 24px bold !important;">Total:</p><span class="summary">{{ total }} rub</span>
             <div style="margin-top: 10px;">
                 <a class="btn btn-primary btn-large" ng-href="#/">Continue shopping</a>
                 <a class="btn btn-primary btn-large button-check" ng-click="check()">Check out</a>
